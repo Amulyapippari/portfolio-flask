@@ -7,8 +7,8 @@ app.secret_key = "replace_with_a_secret_key"
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_ADDRESS = "pippariamulya@gmail.com"        # your Gmail address
-EMAIL_PASSWORD = "bvkfjmmbethnpyvz"           # the 16-char App Password from Google
+EMAIL_ADDRESS =os.getenv("EMAIL_USER")         # your Gmail address
+EMAIL_PASSWORD =os.getenv("EMAIL_PASS")           # the 16-char App Password from Google
 
 @app.route("/", methods=["GET", "POST"])
 def index():
