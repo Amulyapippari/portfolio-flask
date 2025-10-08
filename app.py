@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request, flash, redirect
+import os
 import smtplib
 from email.message import EmailMessage
+from dotenv import load_dotenv 
 
 app = Flask(__name__)
 app.secret_key = "replace_with_a_secret_key"
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_ADDRESS =os.getenv("EMAIL_USER")         # your Gmail address
+EMAIL_ADDRESS =  os.getenv("EMAIL_USER")         # your Gmail address
 EMAIL_PASSWORD =os.getenv("EMAIL_PASS")           # the 16-char App Password from Google
 
 @app.route("/", methods=["GET", "POST"])
