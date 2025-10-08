@@ -53,6 +53,8 @@ def index():
 @app.route("/test-env")
 def test_env():
     return f"EMAIL_USER={os.getenv('EMAIL_USER')}<br>EMAIL_PASS={'*'*16 if os.getenv('EMAIL_PASS') else None}"
-
+@app.route("/download-pdf")
+def download_pdf():
+    return send_from_directory("static", "amulya_p_ur-1.pdf", as_attachment=True)
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 5000)), debug=True)
