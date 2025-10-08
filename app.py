@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, flash, redirect
 import os
+from flask import Flask, render_template, request, flash, redirect
 import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv 
